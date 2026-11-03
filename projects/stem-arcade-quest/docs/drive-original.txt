@@ -1,0 +1,141 @@
+🎮 STEM Arcade Quest: Pac-Man & Frogger Educational Game Engine
+  
+
+
+Origin & Context: Evolved from pinned Gemini architectural explorations and the Google AI Studio prototype Kids Game Design: Frogger-Style Learning, alongside companion arcade applets (Turbo Toon Racer and Retro Football) cataloged in applet_access_history.json.
+Overview
+STEM Arcade Quest is a dual-mechanic retro-arcade educational game designed to teach pattern recognition, arithmetic, and algorithmic pathfinding to K–8 learners through intuitive coin-op gameplay loops. It fuses Pac-Man-style grid/maze navigation (node/pellet collection and ghost/obstacle evasion) with Frogger-style multi-lane timing mechanics and checkpoint learning gates.
+
+
+________________
+
+
+Core Architecture & Game Mechanics
+stateDiagram-v2
+
+
+    [*] --> MazeNavigation: Start Level
+
+
+    MazeNavigation --> LaneCrossing: Collect Core STEM Nodes
+
+
+    LaneCrossing --> SafeZoneCheckpoint: Reach Median / Gate
+
+
+    SafeZoneCheckpoint --> QuestionEngine: Trigger STEM Challenge
+
+
+    QuestionEngine --> PowerUpActive: Correct Answer (Speed + Multiplier)
+
+
+    QuestionEngine --> MazeNavigation: Retry / Adaptive Hint
+
+
+    PowerUpActive --> LevelComplete: Clear Final Goal
+
+
+1. Grid & Maze Pathfinding (/src/maze):
+   * Tile-map collision matrix with deterministic 60fps movement interpolation.
+   * AI obstacle/patrol agents using A* and scatter/chase state machines inspired by classic Pac-Man ghost behaviors.
+2. Frogger-Style Hazard Lanes (/src/engine):
+   * Multi-speed horizontal hazard rivers and traffic lanes requiring timing, velocity estimation, and spatial planning.
+3. Adaptive STEM Question Engine (/src/questions):
+   * Reaching checkpoint safe zones pauses hazard timers and launches age-calibrated STEM challenges (math expressions, logic sequences, and science trivia).
+   * Correct answers unlock temporary invincibility power-ups, speed boosts, and combo score multipliers.
+4. Procedural Retro Audio (/src/audio):
+   * Zero-dependency chiptune sound effects and level fanfare synthesized in real time via the browser's native Web Audio API.
+
+
+________________
+
+
+2-Year AI Model Evolution Spotlight (2024 → 2026)
+* Early 2024 Baseline: Models required piecemeal prompting for individual functions (separate prompts for HTML canvas setup, collision math, and question arrays) and frequently lost state across file boundaries.
+* 2025–2026 Breakthrough: Built through iterative long-context reasoning in Gemini, synthesizing the entire deterministic game loop, A* tile-map routing, Web Audio synthesizer, and pedagogical difficulty scaling within a unified conversational workspace.
+
+
+________________
+
+
+Repository Structure
+stem-arcade-quest/
+
+
+├── index.html
+
+
+├── package.json
+
+
+├── tsconfig.json
+
+
+├── src/
+
+
+│   ├── main.ts                 # Entry point & 60fps requestAnimationFrame loop
+
+
+│   ├── engine/
+
+
+│   │   ├── InputManager.ts     # Keyboard, touch & gamepad directional buffering
+
+
+│   │   ├── CollisionSystem.ts  # AABB & grid-tile intersection solver
+
+
+│   │   └── LaneHazards.ts      # Frogger-style velocity lanes & safe zones
+
+
+│   ├── maze/
+
+
+│   │   ├── TileMap.ts          # Pac-Man style maze layout & pellet nodes
+
+
+│   │   └── PatrolAI.ts         # Scatter, chase & frightened AI state machine
+
+
+│   ├── questions/
+
+
+│   │   ├── StemBank.ts         # Modular math, logic & science question bank
+
+
+│   │   └── CheckpointModal.ts  # In-game UI overlay & power-up reward handler
+
+
+│   └── audio/
+
+
+│       └── ChiptuneSynth.ts    # Web Audio API oscillator sound generator
+
+
+└── docs/
+
+
+    └── ARCHITECTURE.md
+
+
+________________
+
+
+Quickstart
+# Clone the repository
+
+
+git clone https://github.com/itsdeon/stem-arcade-quest.git
+
+
+cd stem-arcade-quest
+
+
+# Install dependencies and start the local Vite dev server
+
+
+npm install
+
+
+npm run dev
