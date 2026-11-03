@@ -1,0 +1,964 @@
+GitHub AI Portfolio Blueprint & Project READMEs (2024–2026)
+Master architectural blueprint and repository documentation suite designed for Deon James (github.com/itsdeon). This portfolio anchors 24 months of frontier AI systems engineering across cloud-native agents, deterministic simulation physics, and civic AI audits.
+1. Portfolio Strategy: Mapping 2 Years of AI Model Evolution (2024–2026)
+Structuring a modern GitHub presence requires transcending disconnected code repositories. The profile github.com/itsdeon functions as an architectural chronicle showing how frontier foundation models evolved from static multimodal context processors into real-time code execution engines, and ultimately into autonomous, self-healing multi-agent topologies governed by enterprise security frameworks.       2024 - Early 2025                  Mid 2025 - Early 2026                     2025 - 2026
+
+
+┌───────────────────────────────┐  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐
+
+
+│           PHASE 1             │  │            PHASE 2              │  │            PHASE 3              │
+
+
+│ Multimodal Pipelines & Prompt │  │ Interactive Reasoning, Physics  │  │ Autonomous Multi-Agent Systems, │
+
+
+│  - Million-Token Auditing     │─►│  - Zero-Engine Physics (Canvas) │─►│  - Model Context Protocol (MCP) │
+
+
+│  - Dataset Curation & Bias    │  │  - WebAssembly Compilation (C++)│  │  - Self-Healing CI/CD Pipelines │
+
+
+│  - Structured Extraction      │  │  - Vibe-Coded Dynamic Logic     │  │  - Zero-Trust SPIFFE Identity   │
+
+
+└───────────────────────────────┘  └─────────────────────────────────┘  └─────────────────────────────────┘
+Phase 1: Multimodal Data Pipelines & Structured Prompting (2024 – Early 2025)
+* Core Paradigm Shift: Transitioning from narrow natural language processing to million-token context ingestion, structured JSON/schema generation, and programmatic multimedia preparation.
+* Engineering Focus: High-throughput media chunking, civic dataset evaluation, cross-modal document intelligence, and programmatic prompt design using Google AI Studio.
+* Anchor Artifacts:
+   * Women-at-the-Table/Gapp-web-application: Algorithmic bias audits and gender/diversity representation tracking across civic institutions.
+   * Women-at-the-Table/media-splitter: Audio/video segmentation and timestamp alignment pipelines optimized for high-density LLM token ingestion.
+   * Music Playlist Generator App: Early structured schema exploration mapping complex mood constraints to curated audio vectors.
+   * Microfinance Research Paper Analysis: Long-context extraction evaluating non-linear economic papers via Gemini 1.5 Pro multimodal processing.
+Phase 2: Interactive Reasoning, Physics Simulation & Vibe-Coded Engines (Mid 2025 – Early 2026)
+* Core Paradigm Shift: Moving beyond textual responses into spatial reasoning, mathematical verification, game-loop generation, and WebAssembly compilation synthesized directly from prompt flows using Gemini 2.5 and Gemini 3 coding capabilities.
+* Engineering Focus: Deterministic 60fps tick loops, procedural audio synthesis via Web Audio API, spatial physics equations solved without commercial game engines, and low-latency educational sandboxes.
+* Anchor Artifacts:
+   * Pac-Man / Frogger Style Kids Educational Arcade Game (Kids Game Design: Frogger-Style Learning): Dual-mechanic lane-crossing and grid-routing game driving active STEM problem-solving.
+   * Companion Kids Game Applets: Turbo Toon Racer and Retro Football tracked in applet_access_history.json, demonstrating rapid conversational app synthesis.
+   * Youth STEM Symposium Interactive Lab Suite: Multi-module pedagogical sandbox built for the Howard Community College Youth STEM Symposium (March 14, 2026).
+   * Arcade Sports Physics Suite: Native 3D C++ / Raylib 7v7 Football Simulation (with custom parabolic trajectory drag and route AI) paired with a WebGL/Three.js street basketball engine.
+   * PromptDJ Controller: Real-time interactive Web MIDI mapping hardware inputs to generative parameters.
+Phase 3: Autonomous Multi-Agent Systems, Cognitive Memory & Self-Healing CI/CD (2025 – 2026)
+* Core Paradigm Shift: Transitioning from single conversational workflows to distributed multi-agent swarms, persistent episodic/semantic vector memory, deterministic Model Context Protocol (MCP) tool routing, and Zero-Trust AI governance.
+* Engineering Focus: Agent-to-Agent (A2A) orchestration, SPIFFE/SPIRE cryptographic workload identity, runtime semantic guardrails (Model Armor), and automated GitHub PR self-healing loops on Google Cloud.
+* Anchor Artifacts:
+   * BrAIn³ Cognitive Memory Architecture: Local-first vector memory synthesizing personal telemetry into queryable dynamic context graphs.
+   * itsdeon/Google-ADK-Samples & GPS ADK Hackathon Technical Requirements: Enterprise-grade multi-agent harnesses implementing ADK 2.0, Agent Spaces, and MCP tool servers.
+   * Navigating the Gemini Ecosystem & GCP Cloud Architect Prep: Theoretical and enterprise architectural governance frameworks covering Private Service Connect (allapi-psc) and Zero-Trust agent auth.
+   * codemender-lab (ace-module2-lab): Autonomous DevSecOps pipeline using Vertex AI to analyze failed build logs and push self-healing code remediation commits.
+   * GovMap AI Assistant: Context-aware civic routing agent mapping public regulatory compliance frameworks.
+2. Complete Project Inventory Table
+Repository Name
+	Project Title & Origin
+	Primary Tech Stack
+	Model Capability Showcased
+	Target Deployment Target
+	itsdeon
+	Master Profile README
+	Markdown, GitHub Badges
+	Portfolio Orchestration & Meta-Strategy
+	GitHub Profile
+	stem-arcade-quest
+	Pac-Man / Frogger Kids Educational Arcade Game
+	Vanilla JS, HTML5 Canvas, Web Audio API
+	Conversational Game Loop Synthesis, State Machines
+	GitHub Pages / Static Web
+	youth-stem-symposium-labs
+	Youth STEM Symposium Lab Suite
+	React 19, Next.js 15, TypeScript, WebGL
+	Multidisciplinary Pedagogical Simulation Generation
+	Cloud Run / Vercel
+	arcade-sports-physics-suite
+	3D 7v7 Football & Arcade Basketball Engines
+	C++17, Raylib, Three.js, GLSL, WebAssembly
+	Spatial Vector Mathematics, Dynamic AI Routing
+	Desktop (CMake) / WASM
+	brain3-agent-architecture
+	BrAIn³ Cognitive Memory Architecture
+	Python, FastEmbed, LanceDB, FastAPI
+	Episodic/Semantic Memory Graphs, Retrieval Chains
+	Docker / GKE
+	enterprise-adk-patterns
+	Enterprise Multi-Agent Orchestration & ADK 2.0
+	Python, Google ADK, MCP Protocol, gRPC
+	Agent-to-Agent (A2A), Deterministic Tool Binding
+	Cloud Run / Private GKE
+	codemender-lab
+	Self-Healing DevSecOps CI/CD Pipeline
+	Python, GitHub Actions, Vertex AI SDK
+	Autonomous Code Diagnostics & Self-Healing PRs
+	GitHub Actions Workflows
+	media-splitter
+	Multimodal Audio/Video Segmentation Pipeline
+	Python 3.11, FFmpeg, AsyncIO
+	High-Throughput Token Ingestion Preprocessing
+	Local CLI / Docker Batch
+	gapp-web-application
+	Algorithmic Bias & Representation Auditor
+	TypeScript, React, Tailwind, Python
+	Long-Context Civic Auditing, Disparity Metrics
+	Google Cloud App Engine
+	prompt-dj-controller
+	Physical-to-Generative Audio MIDI Harness
+	Web MIDI API, Web Audio API, Gemini 2.5 Flash
+	Real-Time Multimodal Parameter Modulation
+	GitHub Pages / Standalone
+	3. Ready-to-Use Repository README.md Templates
+3.1 Master Profile README (itsdeon/itsdeon/README.md)
+# Hi, I'm Deon James 👋
+
+
+### AI Systems Engineer & Enterprise Cloud Architect
+
+
+[![GitHub Profile](https://img.shields.io/badge/GitHub-itsdeon-181717?style=flat-square&logo=github)](https://github.com/itsdeon)
+
+
+[![Google Cloud](https://img.shields.io/badge/GCP-Certified-4285F4?style=flat-square&logo=googlecloud)](https://cloud.google.com)
+
+
+[![Agent Development Kit](https://img.shields.io/badge/Google-ADK_2.0-34A853?style=flat-square)](https://github.com/itsdeon/Google-ADK-Samples)
+
+
+[![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com)
+
+
+I architect enterprise-grade AI systems, autonomous agentic runtimes, and high-performance interactive physics engines. My work tracks the frontier transition from structured prompt engineering and long-context multimodal audits to distributed multi-agent systems governed by Zero-Trust security and deterministic Model Context Protocol (MCP) pipelines.
+
+
+---
+
+
+### 🔬 The 2-Year Frontier AI Evolution (2024–2026)
+
+
+My open-source engineering tracks the fundamental shift in artificial intelligence over the past 24 months:
+
+
+[Phase 1: 2024 - Early 2025] ──► [Phase 2: Mid 2025 - Early 2026] ──► [Phase 3: 2025 - 2026]
+Multimodal Data Pipelines         Interactive Physics & Spatial AI     Autonomous Multi-Agent Systems
+• Million-token long context      • Zero-engine 60fps Canvas engines   • Agent Development Kit (ADK 2.0)
+• Civic bias auditing (Gapp)      • WebAssembly C++ ball trajectories  • BrAIn³ Cognitive Memory Graph
+• Media segmentation (FFmpeg)     • Real-time STEM pedagogical logic   • Self-healing CI/CD (CodeMender)
+
+
+---
+
+
+### 📂 Featured Architectural Repositories
+
+
+| Repository | Focus Area | Core Stack | Live Demo / Artifact |
+
+
+| :--- | :--- | :--- | :--- |
+
+
+| **[stem-arcade-quest](https://github.com/itsdeon/stem-arcade-quest)** | Retro Educational Arcade Engine | Canvas 2D, Web Audio API | [Launch Game](https://itsdeon.github.io/stem-arcade-quest) |
+
+
+| **[youth-stem-symposium-labs](https://github.com/itsdeon/youth-stem-symposium-labs)** | Quantum, Gene & Gravity Lab Suite | React, Next.js, WebGL | [Interactive Lab](https://youth-stem-symposium.web.app) |
+
+
+| **[arcade-sports-physics-suite](https://github.com/itsdeon/arcade-sports-physics-suite)** | 3D 7v7 Football & Street Basketball | C++17, Raylib, Three.js, WASM | [Play in Browser](https://itsdeon.github.io/arcade-sports-physics-suite) |
+
+
+| **[brain3-agent-architecture](https://github.com/itsdeon/brain3-agent-architecture)** | Persistent Agentic Memory Graph | Python, LanceDB, FastEmbed | [Architecture Blueprint](https://github.com/itsdeon/brain3-agent-architecture#architecture) |
+
+
+| **[enterprise-adk-patterns](https://github.com/itsdeon/Google-ADK-Samples)** | Enterprise ADK 2.0 & MCP Orchestration | Python, Google ADK, Vertex AI | [Sample Code](https://github.com/itsdeon/Google-ADK-Samples) |
+
+
+| **[codemender-lab](https://github.com/itsdeon/codemender-lab)** | Self-Healing DevSecOps CI/CD | GitHub Actions, Vertex Gemini | [Workflow Run](https://github.com/itsdeon/codemender-lab/actions) |
+
+
+| **[media-splitter](https://github.com/Women-at-the-Table/media-splitter)** | Multimodal Video Token Ingestion | Python 3.11, FFmpeg | [CLI Documentation](https://github.com/Women-at-the-Table/media-splitter) |
+
+
+| **[gapp-web-application](https://github.com/Women-at-the-Table/Gapp-web-application)** | Civic AI Algorithmic Impact Auditor | React, Node.js, Civic APIs | [Platform Overview](https://womenatthetable.net) |
+
+
+---
+
+
+### 🛡️ Enterprise Governance & Cloud AI Architecture
+
+
+* **Agent Security**: Implementation of SPIFFE/SPIRE cryptographic workload identities for autonomous agent-to-agent communication.
+
+
+* **Semantic Guardrails**: Real-time prompt injection defense and schema validation using Model Armor and private VPC egress via `allapi-psc`.
+
+
+* **Enterprise Blueprinting**: In-depth cloud architectural design detailed in [Navigating the Gemini Ecosystem](https://docs.google.com/document/d/1SFtX8Gq8ZxjKjauJ44WZTIWRSTn-blmF6h-Pd_UXj1k/edit?usp=drivesdk&ouid=113168009080834374758) and [GCP Cloud Architect Prep](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221rc84jjk1-mmK0aVIx09AP0L6_fvo2KEa%22%5D,%22action%22:%22open%22,%22userId%22:%22113168009080834374758%22,%22resourceKeys%22:%7B%7D%7D).
+3.2 stem-arcade-quest — Pac-Man / Frogger Kids Educational Arcade Game (README.md)
+# STEM Arcade Quest: Pac-Man / Frogger Educational Arcade Engine
+
+
+[![Play Live on GitHub Pages](https://img.shields.io/badge/Play_Live-GitHub_Pages-brightgreen?style=for-the-badge&logo=github)](https://itsdeon.github.io/stem-arcade-quest)
+
+
+[![Canvas 2D](https://img.shields.io/badge/Render-HTML5_Canvas_2D-orange?style=flat-square)](https://developer.mozilla.org)
+
+
+[![Web Audio API](https://img.shields.io/badge/Audio-Procedural_Web_Audio-purple?style=flat-square)](https://developer.mozilla.org)
+
+
+[![AI Archetype](https://img.shields.io/badge/Model_Era-Gemini_2.5_Conversational_Synthesis-blue?style=flat-square)](https://aistudio.google.com)
+
+
+A dual-mechanic educational arcade game combining Pac-Man tile-grid routing with Frogger dynamic lane-crossing hazards. Engineered from foundational conversational sessions in Google AI Studio ([Kids Game Design: Frogger-Style Learning](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2214Uy22aZaCX2TbIGXn2sr0Maj-nxeblig%22%5D,%22action%22:%22open%22,%22userId%22:%22113168009080834374758%22,%22resourceKeys%22:%7B%7D%7D)), this engine synthesizes classic arcade nostalgia with responsive STEM problem-solving mechanics. Companion applets include `Turbo Toon Racer` and `Retro Football` from [applet_access_history.json](https://drive.google.com/file/d/1jhzNplbIIy9Rf77_NmQivocyBS522QQf/view?usp=drivesdk).
+
+
+---
+
+
+## 🎮 Core Game Mechanics
+
+
+┌────────────────────────────────────────────────────────┐
+│                   ZONE 3: MAZE LEVEL                   │
+│   [Pac-Man Pellet Routing, Ghost Obstacles, Safe-Zones] │
+├────────────────────────────────────────────────────────┤
+│             ZONE 2: STEM CHECKPOINT PORTAL             │
+│   [State Pause, Interactive Arithmetic / Pattern Task]  │
+├────────────────────────────────────────────────────────┤
+│                  ZONE 1: HIGHWAY LEVEL                 │
+│      [Frogger Timing, Dynamic Lanes, Momentum Physics]  │
+└────────────────────────────────────────────────────────┘
+
+
+1. **Dual Phase Gameplay**:
+
+
+   * **The Transit Run (Frogger)**: Players navigate horizontal obstacle bands running at variable velocity vectors. Success requires spatial timing and velocity prediction.
+
+
+   * **The Grid Maze (Pac-Man)**: Upon reaching the transit bank, players transition into an A* tile-map maze containing energy pellets, logic locks, and dynamic pursuers.
+
+
+2. **Safe-Zone STEM Portals**: Reaching key checkpoints halts environmental physics and displays a dynamic STEM challenge (logic gates, arithmetic sequences, or spatial pattern matching). Solving within the window grants invulnerability and double score multipliers.
+
+
+3. **Procedural Web Audio Engine**: Zero external audio assets. All sound effects—including movement chirps, collision crashes, and score chimes—are synthesized dynamically via custom oscillator envelopes (`sine`, `triangle`, `square`) in the Web Audio API.
+
+
+---
+
+
+## 🧠 Frontier Model Capability Spotlight
+
+
+This project showcases the evolution of coding capabilities in Gemini 2.5/3:
+
+
+* **Conversational Synthesis**: Transitioned from piecemeal code snippets to generating cohesive, unified state machines encompassing the rendering loop, delta-time management, collision arrays, and modular question sets in one synchronized prompt.
+
+
+* **Algorithmic State Machines**: The AI code generator maintained consistency across separate player modes (Frogger continuous motion vs. Pac-Man discrete tile grid alignment) without introducing frame drops or memory leaks.
+
+
+---
+
+
+## 📁 Repository Directory Structure
+
+
+stem-arcade-quest/
+├── index.html                 # Canvas container and entry DOM
+├── docs/                      # Architectural specs & design transcripts
+│   └── game-design-prompt.md  # Original AI Studio prompt blueprint
+├── src/
+│   ├── engine/
+│   │   ├── GameLoop.js        # Deterministic 60fps tick runner
+│   │   ├── InputHandler.js    # Keyboard & touch swipe normalizer
+│   │   └── CollisionEngine.js # AABB & Circle-to-AABB intersection checks
+│   ├── maze/
+│   │   ├── TileMap.js         # 2D Grid parser and pellet state tracker
+│   │   └── Pathfinding.js     # Lightweight Manhattan/A* route evaluator
+│   ├── questions/
+│   │   ├── STEMEngine.js      # Dynamic arithmetic & logic challenge dispenser
+│   │   └── QuestionBank.json  # Multidisciplinary challenge definitions
+│   └── audio/
+│       └── SoundFX.js         # Web Audio API procedural sound synthesizer
+└── style.css                  # Retro arcade CRT styling
+
+
+---
+
+
+## 🚀 Quickstart & Local Execution
+
+
+No build tooling or package installation required. The game runs natively in any modern browser:
+
+
+```bash
+
+
+# Clone the repository
+
+
+git clone https://github.com/itsdeon/stem-arcade-quest.git
+
+
+cd stem-arcade-quest
+
+
+# Serve locally using any static web server
+
+
+python3 -m http.server 8080
+
+
+# Or using Node:
+
+
+# npx serve .
+
+
+Navigate to http://localhost:8080 to play.
+
+
+## 3.3 `youth-stem-symposium-labs` — Youth STEM Symposium Interactive Lab Suite (`README.md`)
+
+
+```markdown
+
+
+# Youth STEM Symposium Interactive Lab Suite (HCC 2026)
+
+
+[![Launch Live Suite](https://img.shields.io/badge/Launch-Interactive_Labs-blue?style=for-the-badge&logo=google-chrome)](https://youth-stem-symposium.web.app)
+
+
+[![React 19](https://img.shields.io/badge/Framework-React_19-61DAFB?style=flat-square&logo=react)](https://react.dev)
+
+
+[![Next.js 15](https://img.shields.io/badge/Fullstack-Next.js_15-black?style=flat-square&logo=next.js)](https://nextjs.org)
+
+
+[![Tailwind CSS](https://img.shields.io/badge/Style-Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)
+
+
+Engineered specifically for the **Howard Community College Youth STEM Symposium (March 14, 2026)**, this interactive suite provides middle and high school students with real-time visual sandboxes across molecular biology, quantum information science, and classical orbital mechanics.
+
+
+---
+
+
+## 🔬 Interactive Laboratory Modules
+
+
+┌─────────────────────────────────┐   ┌─────────────────────────────────┐
+│       1. GENE DESIGN LAB        │   │    2. QUANTUM GATE PLAYGROUND   │
+│ • Base Pair Editing (A-T, C-G)  │   │ • 3D Bloch Sphere Visualizer    │
+│ • Point Mutation Simulator      │   │ • H, X, Y, Z, CNOT Circuits     │
+│ • Transcription/Translation     │   │ • Multi-Qubit Entanglement      │
+└─────────────────────────────────┘   └─────────────────────────────────┘
+┌─────────────────────────────────┐   ┌─────────────────────────────────┐
+│     3. ORBITAL MECHANICS LAB    │   │   4. VECTOR ASTEROID PHYSICS    │
+│ • N-Body Gravitational Sandbox  │   │ • Real-time Impulse & Momentum  │
+│ • Lagrange Points & Resonance   │   │ • Elastic/Inelastic Collisions  │
+│ • Escape Velocity Visualization │   │ • Force Vector Decomposition    │
+└─────────────────────────────────┘   └─────────────────────────────────┘
+
+
+### 1. Gene Design Lab
+
+
+* Interactive DNA double-helix sequence editor allowing base manipulation (Adenine, Thymine, Cytosine, Guanine).
+
+
+* Real-time translation to mRNA codons and amino acid polypeptide synthesis.
+
+
+* Mutation stress-testing showing missense, nonsense, and silent frameshifts.
+
+
+### 2. Quantum Gate Playground
+
+
+* 3D WebGL Bloch Sphere displaying single-qubit state superposition $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$.
+
+
+* Draggable quantum logic gates: Hadamard ($H$), Pauli ($X, Y, Z$), Phase ($S, T$), and 2-Qubit Controlled-NOT ($CNOT$).
+
+
+* Measurement probability simulations with stochastic wave function collapse.
+
+
+### 3. Orbital Mechanics & Gravity Well
+
+
+* N-body gravitational simulator solving Newtonian acceleration $\vec{F} = G \frac{m_1 m_2}{r^2} \hat{r}$.
+
+
+* Parameter adjustments for celestial mass, orbital eccentricity, and escape velocity.
+
+
+* Real-time rendering of planetary trajectories and stable resonance configurations.
+
+
+### 4. Vector Asteroid Physics Lab
+
+
+* Interactive 2D vector environment demonstrating conservation of momentum and energy.
+
+
+* Dynamic force vector arrows indicating velocity, thrust, and normal forces.
+
+
+* Elastic and inelastic collisions with user-adjustable restitution coefficients.
+
+
+---
+
+
+## 💻 Tech Stack & Architecture
+
+
+* **Frontend**: Next.js 15 (App Router), React 19, TypeScript.
+
+
+* **Visual Rendering**: HTML5 Canvas 2D + WebGL (Three.js for the Quantum Bloch Sphere).
+
+
+* **Styling**: Tailwind CSS with customized high-contrast lab themes.
+
+
+* **Deployment**: Optimized for low-bandwidth classroom deployments via Vercel Edge or Google Cloud Run.
+
+
+---
+
+
+## 🛠️ Workshop Quickstart
+
+
+```bash
+
+
+# Clone the repository
+
+
+git clone https://github.com/itsdeon/youth-stem-symposium-labs.git
+
+
+cd youth-stem-symposium-labs
+
+
+# Install project dependencies
+
+
+npm install
+
+
+# Run the local development server
+
+
+npm run dev
+
+
+Open http://localhost:3000 to interact with the suite. Enable "Workshop Mode" via the top navigation bar to access guided curriculum questions for students.
+
+
+## 3.4 `arcade-sports-physics-suite` — 3D 7v7 Football & Arcade Basketball Engines (`README.md`)
+
+
+```markdown
+
+
+# Arcade Sports Physics Suite: 3D 7v7 Football & Arcade Basketball
+
+
+[![Play WebAssembly Suite](https://img.shields.io/badge/Play_Live-WebAssembly-blueviolet?style=for-the-badge&logo=webassembly)](https://itsdeon.github.io/arcade-sports-physics-suite)
+
+
+[![C++17](https://img.shields.io/badge/Language-C++17-blue?style=flat-square&logo=c%2B%2B)](https://isocpp.org)
+
+
+[![Raylib](https://img.shields.io/badge/Graphics-Raylib-red?style=flat-square)](https://www.raylib.com)
+
+
+[![Three.js](https://img.shields.io/badge/Engine-Three.js_WebGL-black?style=flat-square&logo=three.js)](https://threejs.org)
+
+
+A dual-engine sports physics suite engineered without commercial game engines. Demonstrates mathematical ball trajectories, dynamic defensive coverage state machines, and arcade-inspired momentum systems.
+
+
+---
+
+
+## 🏈 Module A: 3D 7v7 Football Simulation (C++ / Raylib / OpenGL)
+
+
+   [Route Stem: 10 yds] ──► [Speed Cut / Break] ──► [Separation]
+
+
+             ▲
+
+
+             │ (Parabolic Flight: Drag + Magnus + Gravity)
+
+
+             ▼
+
+
+      [Pass Release] ═════════════════════════════► [Catch Window]
+
+
+* **Authentic NFL Route Tree Engine**: Programmatic offensive route branches (Slant, Out, Dig, Post, Go, Wheel) with defensive reactions:
+
+
+  * **Cover 2**: Split-safety deep zone protection with flat linebackers.
+
+
+  * **Cover 3**: Single-high deep third coverage with underneath curl-flat zones.
+
+
+  * **Cover 4 (Quarters)**: Four deep defenders adjusting to vertical stems.
+
+
+  * **Man-to-Man**: Dynamic tracking evaluating wide receiver separation vectors.
+
+
+* **Ball Trajectory Physics Solver**: Solves non-linear projectile motion in 3D:
+
+
+  $$\frac{d\vec{v}}{dt} = \vec{g} - \frac{1}{2m} \rho C_d A \|\vec{v}\|\vec{v}$$
+
+
+  Accounts for atmospheric drag, launch angle, spiral velocity, and 3D spherical catch-radius intersection hitboxes.
+
+
+* **Custom Shaders**: GLSL turf rendering shaders with dynamic lighting, smooth coach overhead-to-pocket camera transitions, and procedural crowd audio state handling.
+
+
+---
+
+
+## 🏀 Module B: Arcade Basketball Prototype (WebGL / Three.js)
+
+
+* **NBA Street-Inspired Arc Physics**: Exaggerated gravity scaling, hang-time dunk trajectories, rim rebound elasticity, and ankle-breaker crossover momentum physics.
+
+
+* **Momentum & Gamebreaker Meter**: Real-time combo tracker measuring consecutive crossovers, directional hesitation dribbles, and step-back jumpers. Triggers animated visual trails upon reaching maximum hype.
+
+
+* **Low-Latency Input Pipeline**: Input buffering supporting multi-button gamepad mapping and keyboard controls.
+
+
+---
+
+
+## ⚙️ Compilation & WebAssembly Build
+
+
+### Desktop Native Compilation (C++ / Raylib)
+
+
+```bash
+
+
+# Build native binary using CMake
+
+
+cd football-7v7
+
+
+mkdir build && cd build
+
+
+cmake ..
+
+
+cmake --build .
+
+
+# Run the native simulation
+
+
+./football_sim
+WebAssembly (Emscripten) Compilation
+To compile the C++ Raylib football simulation to native WebAssembly for browser deployment:emcc -o ../dist/football_sim.html src/*.cpp \
+
+
+    -O3 -s USE_GLFW=3 -s ASYNCIFY \
+
+
+    -Iinclude -Llib -lraylib \
+
+
+    -s TOTAL_MEMORY=67108864 \
+
+
+    --shell-file shell_minimal.html
+
+
+Launch dist/football_sim.html to run the 3D football engine natively in WebGL at 60fps.
+
+
+## 3.5 `brain3-agent-architecture` — BrAIn³ Cognitive Memory & Enterprise ADK Patterns (`README.md`)
+
+
+```markdown
+
+
+# BrAIn³ Cognitive Memory Architecture & Enterprise ADK Harnesses
+
+
+[![Google ADK 2.0](https://img.shields.io/badge/Google-ADK_2.0-34A853?style=for-the-badge&logo=google)](https://github.com/itsdeon/Google-ADK-Samples)
+
+
+[![Model Context Protocol](https://img.shields.io/badge/Protocol-MCP_Standard-blue?style=flat-square)](https://modelcontextprotocol.io)
+
+
+[![Zero-Trust SPIFFE](https://img.shields.io/badge/Security-SPIFFE_Identities-black?style=flat-square)](https://spiffe.io)
+
+
+[![LanceDB](https://img.shields.io/badge/Vector_DB-LanceDB-orange?style=flat-square)](https://lancedb.com)
+
+
+Reference implementations for persistent agentic cognitive memory, Model Context Protocol (MCP) server integration, and Zero-Trust agent orchestration on Google Cloud. Incorporates enterprise research and designs from [itsdeon/Google-ADK-Samples](https://github.com/itsdeon/Google-ADK-Samples), the [GPS ADK Hackathon Technical Requirements](https://drive.google.com/open?id=1DTTBY1EFj7VtUtCym33okS1XqMw2uXWN), and [Navigating the Gemini Ecosystem](https://docs.google.com/document/d/1SFtX8Gq8ZxjKjauJ44WZTIWRSTn-blmF6h-Pd_UXj1k/edit?usp=drivesdk&ouid=113168009080834374758).
+
+
+---
+
+
+## 🏛️ BrAIn³ Cognitive Memory Topology
+
+
+┌────────────────────────────────────────────────────────┐
+│             USER TELEMETRY & CONVERSATION              │
+└───────────────────────────┬────────────────────────────┘
+│
+▼
+┌────────────────────────────────────────────────────────┐
+│         INGESTION & CONTEXT COMPRESSION PIPELINE       │
+│ • Semantic Chunking    • Entity Extraction             │
+│ • FastEmbed Embeddings • Episodic Event Framing        │
+└───────────────────────────┬────────────────────────────┘
+│
+▼
+┌────────────────────────────────────────────────────────┐
+│            LANCEDB PERSISTENT MEMORY GRAPH             │
+│   [Episodic Memory]      [Knowledge Graph Entities]    │
+│   (Session History)      (Long-Term Facts & Beliefs)   │
+└───────────────────────────┬────────────────────────────┘
+│
+▼
+┌────────────────────────────────────────────────────────┐
+│              AGENT REASONING CONTEXT ENGINE            │
+│   Dynamic Window Synthesis via Reciprocal Rank Fusion  │
+└────────────────────────────────────────────────────────┘
+
+
+* **Local-First Cognitive Engine**: Transforms ephemeral conversational turns into a structured semantic knowledge graph using LanceDB and localized FastEmbed models.
+
+
+* **Dual Memory Architecture**:
+
+
+  * **Episodic Context**: Temporal history capturing immediate dialogue turns and task completion states.
+
+
+  * **Semantic Memory**: Graph relations preserving entities, technical preferences, and durable domain constraints.
+
+
+* **Context Compression**: Reciprocal Rank Fusion (RRF) scoring ensures prompt context remains within strict token windows without losing factual lineage.
+
+
+---
+
+
+## 🌐 Enterprise ADK 2.0 & MCP Orchestration
+
+
+Implements Google's Agent Development Kit (ADK 2.0) patterns across distributed microservices:
+
+
+1. **Model Context Protocol (MCP)**: Decoupled tool servers communicating over stdio and Server-Sent Events (SSE), standardizing tool discovery across diverse backends.
+
+
+2. **Agent-to-Agent (A2A) Protocols**: Hierarchical agent coordination where a supervisor agent plans sub-goals, delegates tasks to domain-specialist agents, and synthesizes final responses.
+
+
+3. **Zero-Trust Security**:
+
+
+   * **SPIFFE/SPIRE Identity**: Cryptographic identity tokens provisioned per agent worker to eliminate static service-account keys.
+
+
+   * **Model Armor**: Pre- and post-generation evaluation pipelines protecting against indirect prompt injection, sensitive data leakage, and unauthorized tool calls.
+
+
+   * **Private Service Connect (`allapi-psc`)**: Fully isolated network boundaries routing all agentic inference and retrieval through Google private endpoints.
+
+
+---
+
+
+## 🚀 Deployment & Installation
+
+
+```bash
+
+
+# Clone the repository
+
+
+git clone https://github.com/itsdeon/brain3-agent-architecture.git
+
+
+cd brain3-agent-architecture
+
+
+# Install environment dependencies
+
+
+pip install -r requirements.txt
+
+
+# Configure environment variables
+
+
+cp .env.example .env
+
+
+# Provide GCP_PROJECT_ID, VERTEX_REGION, and LANCEDB_PATH
+
+
+# Launch the MCP Agent Server
+
+
+python -m src.server.mcp_entrypoint
+
+
+## 3.6 `codemender-lab` & Multimodal Civic Tooling (`README.md`)
+
+
+```markdown
+
+
+# CodeMender Lab & Multimodal Civic Intelligence
+
+
+[![Self-Healing CI/CD](https://img.shields.io/badge/CI%2FCD-Self--Healing_Actions-2088FF?style=for-the-badge&logo=github-actions)](https://github.com/itsdeon/codemender-lab/actions)
+
+
+[![Vertex AI](https://img.shields.io/badge/Model-Gemini_2.5_Flash-4285F4?style=flat-square&logo=google-cloud)](https://cloud.google.com/vertex-ai)
+
+
+[![FFmpeg](https://img.shields.io/badge/Preprocessing-FFmpeg_Pipelines-007808?style=flat-square&logo=ffmpeg)](https://ffmpeg.org)
+
+
+[![Civic AI](https://img.shields.io/badge/Initiative-Women_at_the_Table-EC008C?style=flat-square)](https://womenatthetable.net)
+
+
+Autonomous DevSecOps pipelines and multimodal data preprocessing engines built to support civic AI evaluation, real-time media manipulation, and automated code self-healing.
+
+
+---
+
+
+## 🛠️ Featured Tooling & Pipelines
+
+
+### 1. CodeMender Lab (`codemender-lab` / `ace-module2-lab`)
+
+
+* **Autonomous PR Diagnostic & Healing**: GitHub Actions workflow powered by Gemini 2.5 Flash on Vertex AI.
+
+
+* **Failure Analysis**: Captures build errors, linter violations, and failed pytest traces.
+
+
+* **Automated Patch Generation**: Synthesizes a targeted code patch, executes validation checks in an isolated runner, and pushes a pull-request fix branch automatically.
+
+
+[Failed CI Test/Build] ──► [Parse Error Stack] ──► [Vertex AI Gemini Diagnosis] ──► [Auto-Commit Fix PR]
+
+
+### 2. Media-Splitter (`Women-at-the-Table/media-splitter`)
+
+
+* High-throughput programmatic Python/FFmpeg pipeline engineered to process heavy audio/video streams for multimodal model ingestion.
+
+
+* Splits high-resolution media into uniform, timestamp-aligned segments with normalized audio waveforms, enabling long-context ingestion without exceeding model context limits.
+
+
+### 3. Gapp Web Application (`Women-at-the-Table/Gapp-web-application`)
+
+
+* Civic technology platform designed to audit public policy databases, datasets, and civic systems for gender representation and algorithmic bias.
+
+
+* Provides transparent metric tracking and audit reports evaluating dataset disparities.
+
+
+### 4. PromptDJ MIDI Controller ([PromptDJ Controller](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%22192Wy4LLN4emu_ktCbiG60uHrBrc8GaKa%22%5D,%22action%22:%22open%22,%22userId%22:%22113168009080834374758%22,%22resourceKeys%22:%7B%7D%7D))
+
+
+* Interactive Web MIDI controller linking physical hardware sliders and knobs to generative music parameters.
+
+
+* Translates physical CC inputs into multimodal prompt directives for dynamic music synthesis.
+
+
+---
+
+
+## 🔧 CodeMender Action Setup
+
+
+To integrate the automated repair pipeline into any repository, place `.github/workflows/codemender.yml` into your target project:
+
+
+```yaml
+
+
+name: CodeMender Self-Healing CI
+
+
+on:
+
+
+  workflow_run:
+
+
+    workflows: ["Build & Test"]
+
+
+    types: [completed]
+
+
+jobs:
+
+
+  heal:
+
+
+    runs-on: ubuntu-latest
+
+
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+
+
+    steps:
+
+
+      - uses: actions/checkout@v4
+
+
+      - name: Setup Python
+
+
+        uses: actions/setup-python@v5
+
+
+        with:
+
+
+          python-version: '3.11'
+
+
+      - name: Authenticate to Google Cloud
+
+
+        uses: google-github-actions/auth@v2
+
+
+        with:
+
+
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+
+      - name: Run CodeMender Diagnostic
+
+
+        run: |
+
+
+          pip install google-cloud-aiplatform requests
+
+
+          python -m codemender.diagnose \
+
+
+            --run-id ${{ github.event.workflow_run.id }} \
+
+
+            --repo ${{ github.repository }}
+
+
+# 4. Step-by-Step Roadmap to Bring the Portfolio to Life
+
+
+┌─────────────────────────────────┐   ┌─────────────────────────────────┐   ┌─────────────────────────────────┐
+│     1. EXTRACT & CONSOLIDATE    │   │      2. ONE-CLICK PLAYABLE      │   │    3. MODEL EVOLUTION STORY     │
+│ • Unpack Drive .zip applets     │──►│ • GitHub Pages auto-deploy      │──►│ • Standardized MODEL_EVOLUTION  │
+│ • Harvest Gemini conversation   │   │ • WebAssembly compilation       │   │ • Explicit prompting trade-offs │
+│ • Sync local Git clones         │   │ • Top-level gameplay badges     │   │ • Architecture evolution notes  │
+└─────────────────────────────────┘   └─────────────────────────────────┘   └─────────────────────────────────┘
+
+
+## Step 1: Extract & Consolidate Source Artifacts
+
+
+1. **Unpack Google Drive Applet Bundles**: Access the Drive directory `1TJcSZGL3ZWjgeAxx4Do9MqCw056UcvR4` containing exported Google AI Studio projects. Unpack `Turbo Toon Racer`, `Retro Football`, and related applets directly into clean Git working directories.
+
+
+2. **Harvest Conversation Artifacts**: Review the historical session logs and the prompt transcript [Kids Game Design: Frogger-Style Learning](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2214Uy22aZaCX2TbIGXn2sr0Maj-nxeblig%22%5D,%22action%22:%22open%22,%22userId%22:%22113168009080834374758%22,%22resourceKeys%22:%7B%7D%7D). Extract the complete JavaScript Canvas loops, Web Audio oscillators, and STEM challenge banks into `stem-arcade-quest`.
+
+
+3. **Consolidate Local Directories**:
+
+
+   * Navigate to `/Users/sirmbp/ADK-v1` and align working code with the public samples in [itsdeon/Google-ADK-Samples](https://github.com/itsdeon/Google-ADK-Samples).
+
+
+   * Review `/Users/sirmbp/Documents/ChatGPT/HIAI` and extract the cognitive memory graphs, Vector RRF routines, and custom tool definitions into `brain3-agent-architecture`.
+
+
+4. **Initialize Public Repositories**: Create the matching remote repositories on GitHub under the `itsdeon` organization using the GitHub CLI:
+
+
+   ```bash
+
+
+   gh repo create itsdeon/stem-arcade-quest --public --source=. --remote=origin
+
+
+   gh repo create itsdeon/youth-stem-symposium-labs --public --source=. --remote=origin
+
+
+   gh repo create itsdeon/arcade-sports-physics-suite --public --source=. --remote=origin
+
+
+   gh repo create itsdeon/brain3-agent-architecture --public --source=. --remote=origin
+
+
+   gh repo create itsdeon/codemender-lab --public --source=. --remote=origin
+Step 2: Make Every Repo Playable in One Click
+1. Automate Web Builds via GitHub Actions:
+   * For stem-arcade-quest, enable static GitHub Pages deployment from the main branch root or /docs folder.
+   * For youth-stem-symposium-labs, implement a GitHub Actions workflow using JamesIves/github-pages-deploy-action or deploy directly to Firebase Hosting/Google Cloud Run to deliver zero-friction workshop access.
+2. Compile 3D Football Simulation to WebAssembly:
+   * Build an automated Emscripten workflow (.github/workflows/wasm-build.yml) that compiles the C++ Raylib project into index.html and index.wasm files.
+   * Place the compiled output in the gh-pages branch alongside the Three.js basketball prototype so visitors can experience both sports engines directly in their browser.
+3. Embed Visual Verification: Every interactive README must feature an animated GIF or MP4 preview directly beneath the main title, verifying gameplay and visual quality before the user clones or launches the code.
+Step 3: Showcase the "2-Year AI Evolution" Story
+To emphasize AI engineering expertise, include a standardized MODEL_EVOLUTION.md file in the root of every repository (or a prominent callout section in the README.md) addressing the following items:
+
+
+* Foundation Model Generation: Specify the exact model family used across iterations (e.g., Gemini 1.5 Pro $\rightarrow$ Gemini 2.5 Pro $\rightarrow$ Gemini 3.1 Pro / Flash).
+* Prompt Engineering vs. Agentic Harness: Explain how the project was directed—whether through system prompts and few-shot examples, or through iterative agent tool calling via the Google Agent Development Kit.
+* Human Architectural Guardrails vs. Model Code: Detail the design trade-offs:
+   * Model Synthesized: Game loop tick patterns, collision intersection math, procedural audio waveforms, and responsive UI boilerplate.
+   * Human Engineered: Memory leak mitigation in Canvas loops, WebAssembly compilation flags, SPIFFE identity token issuance, and Zero-Trust VPC network boundaries.
