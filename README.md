@@ -79,14 +79,16 @@ This portfolio also serves as a living timeline of how foundation model capabili
 
 ---
 
-## 🚀 Featured Portfolio Repositories
+## 🚀 Featured Portfolio Projects
 
-- 🎮 **[stem-arcade-quest](https://github.com/itsdeon/stem-arcade-quest)** — Dual-mechanic Pac-Man / Frogger educational kids game in HTML5 Canvas & TypeScript featuring A* maze routing, hazard lane timing, Web Audio chiptune synthesis, and adaptive STEM checkpoint challenges.
-- 🧬 **[youth-stem-symposium-labs](https://github.com/itsdeon/youth-stem-symposium-labs)** — Interactive science suite built for the Howard Community College Youth STEM Symposium featuring a Gene Design Lab, Quantum Gate Bloch Sphere Playground, N-Body Gravity Well, and Vector Asteroid Physics.
-- 🏈 **[arcade-sports-physics-suite](https://github.com/itsdeon/arcade-sports-physics-suite)** — Custom 3D 7v7 Football Simulation (C++, Raylib, GLSL shaders, NFL coverage schemes) and Arcade Basketball Prototype (Three.js/WebGL, NBA Street-inspired Gamebreaker momentum physics).
-- 🧠 **[brain3-agent-architecture](https://github.com/itsdeon/brain3-agent-architecture)** — BrAIn³ local semantic knowledge graph, Google ADK 2.0 enterprise agent patterns (ADK-v1), MCP/A2A tool harnesses, and Zero-Trust AI governance blueprints.
-- 🤖 **[HIAI](https://github.com/itsdeon/HIAI)** — Full-stack Human-Inspired & Hybrid Intelligence AI orchestration platform combining a modular Python intelligence backend (`hiai`) with a TypeScript/React web frontend.
-- 🛠️ **[codemender-lab](https://github.com/itsdeon/codemender-lab)** — Agentic self-healing CI/CD pipelines with GitHub Actions + Vertex AI, alongside multimodal media chunking (`media-splitter`) and civic AI auditing (`Gapp-web-application`).
+Browse the project folders below for recovered Drive documents and available source scaffolds. Full implementations and live demos are not included for every project. See the [file inventory and availability notes](docs/DRIVE_IMPORT.md).
+
+- 🎮 **[stem-arcade-quest](projects/stem-arcade-quest)** — Dual-mechanic Pac-Man / Frogger educational kids game in HTML5 Canvas & TypeScript featuring A* maze routing, hazard lane timing, Web Audio chiptune synthesis, and adaptive STEM checkpoint challenges.
+- 🧬 **[youth-stem-symposium-labs](projects/youth-stem-symposium-labs)** — Interactive science suite built for the Howard Community College Youth STEM Symposium featuring a Gene Design Lab, Quantum Gate Bloch Sphere Playground, N-Body Gravity Well, and Vector Asteroid Physics.
+- 🏈 **[arcade-sports-physics-suite](projects/arcade-sports-physics-suite)** — Custom 3D 7v7 Football Simulation (C++, Raylib, GLSL shaders, NFL coverage schemes) and Arcade Basketball Prototype (Three.js/WebGL, NBA Street-inspired Gamebreaker momentum physics).
+- 🧠 **[brain3-agent-architecture](projects/brain3-agent-architecture)** — BrAIn³ local semantic knowledge graph, Google ADK 2.0 enterprise agent patterns (ADK-v1), MCP/A2A tool harnesses, and Zero-Trust AI governance blueprints.
+- 🤖 **[HIAI](projects/HIAI)** — Full-stack Human-Inspired & Hybrid Intelligence AI orchestration platform combining a modular Python intelligence backend (`hiai`) with a TypeScript/React web frontend.
+- 🛠️ **[codemender-lab](projects/codemender-lab)** — Agentic self-healing CI/CD pipelines with GitHub Actions + Vertex AI, alongside multimodal media chunking (`media-splitter`) and civic AI auditing (`Gapp-web-application`).
 
 ---
 
