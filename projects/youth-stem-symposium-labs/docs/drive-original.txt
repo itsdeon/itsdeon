@@ -1,0 +1,48 @@
+🧬 Youth STEM Symposium: Interactive Science Lab Suite
+ 
+Overview
+Engineered for the Howard Community College Youth STEM Symposium (March 14, 2026) and evolved from interactive educational prototypes (Personalized AI Learning Notebook), this multi-module web application transforms abstract genetics, quantum computing, and orbital mechanics into tactile, visual sandboxes for middle and high school students.
+
+
+________________
+
+
+Interactive Laboratory Modules
+1. 🧬 Gene Design Lab (/src/labs/gene-designer)
+* Visual DNA Sequence Editor: Drag-and-drop nucleotide base-pair builder (A-T, C-G) with real-time hydrogen bond validation.
+* Transcription & Translation Simulator: Step-by-step visual pipeline converting DNA strands into mRNA codons and folding amino acid chains.
+* Mutation Sandbox: Simulates point mutations, insertions, and deletions so students can immediately observe downstream protein changes.
+2. ⚛️ Quantum Logic & Gate Playground (/src/labs/quantum-logic)
+* Interactive Bloch Sphere: 3D WebGL visualization of single-qubit superposition, phase angles, and measurement collapse probabilities.
+* Circuit Composer: Drag-and-drop quantum gates (Hadamard H, Pauli-X/Y/Z, Phase, and CNOT) with live state-vector amplitude bar charts.
+3. 🪐 Orbital Mechanics & Gravity Well (/src/labs/gravity-lab)
+* N-Body Physics Engine: Real-time gravitational well simulator where students launch planets, satellites, and comets with custom mass and velocity vectors.
+* Trajectory & Escape Velocity Visualizer: Renders predictive orbital paths, Lagrange points, and slingshot maneuvers on an HTML5 Canvas.
+4. 🚀 Vector Asteroid Physics Lab (/src/labs/asteroid-shooter)
+* Newtonian Momentum Sandbox: Classic vector arcade demonstrator teaching inertia, thrust vectors, angular velocity, and elastic collision math in zero-friction space.
+
+
+________________
+
+
+2-Year AI Model Evolution Spotlight
+Showcases how multimodal & coding frontier models (Gemini 2.5 Pro → Gemini 3.1 Pro) enabled rapid prototyping of domain-accurate scientific simulations—translating complex linear algebra (quantum state vectors) and differential equations (N-body gravity) into responsive, kid-friendly React + WebGL visualizers.
+
+
+________________
+
+
+Quickstart & Classroom Deployment
+git clone https://github.com/itsdeon/youth-stem-symposium-labs.git
+
+
+cd youth-stem-symposium-labs
+
+
+npm install
+
+
+npm run dev
+
+
+Deployable as a static export to GitHub Pages (npm run build) or containerized on Google Cloud Run for zero-install classroom workshop access.
