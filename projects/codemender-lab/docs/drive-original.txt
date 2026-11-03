@@ -1,0 +1,20 @@
+🛠️ CodeMender Lab & Applied Multimodal AI Tooling
+ 
+Overview
+A collection of production utilities, autonomous CI/CD security guardrails, and multimodal ingestion pipelines demonstrating how AI integrates into software delivery lifecycles and media processing workflows.
+
+
+________________
+
+
+Featured Repositories & Modules
+1. 🔒 CodeMender Lab (codemender-lab / ace-module2-lab)
+* Agentic PR Diagnostics & Guardrails: GitHub Actions workflows powered by Gemini / Vertex AI that intercept breaking syntax, logic regressions, and security antipatterns on every pull request.
+* Self-Healing Build Loops: Parses failed CI test logs, isolates root-cause stack traces, generates minimal remediation patches, and proposes verified fix commits automatically.
+2. 🎬 Media-Splitter (Women-at-the-Table/media-splitter)
+* Multimodal Ingestion Preprocessor: Python + FFmpeg pipeline engineered to slice, normalize, and chunk large multi-track audio and high-resolution video streams.
+* Metadata & Timestamp Alignment: Preserves frame-accurate timestamps for downstream transcription, embedding generation, and multimodal foundation model analysis.
+3. ⚖️ Gapp Web Application (Women-at-the-Table/Gapp-web-application)
+* Civic Tech & Affirmative AI Auditing: Full-stack web platform designed to evaluate gender representation, diversity metrics, and systemic bias across public datasets and algorithmic decision pipelines.
+4. 🎛️ PromptDJ MIDI Controller (AI Studio Applet)
+* Real-Time Hardware-to-AI Audio: Bridges physical MIDI controller hardware with real-time generative music prompts via WebMIDI.
