@@ -1,0 +1,25 @@
+🧠 BrAIn³ Cognitive Memory & Enterprise Agentic Architectures
+ 
+Overview
+A unified reference repository capturing advanced enterprise agentic architectures, persistent semantic memory layers, and multi-agent orchestration patterns built across Google Cloud Vertex AI, the Google Agent Development Kit (ADK), Model Context Protocol (MCP), and Agent-to-Agent (A2A) standards.
+
+
+Grounded in real-world public sector and enterprise architectures—including itsdeon/Google-ADK-Samples, the GPS ADK Hackathon Technical Requirements, and the architectural guide Navigating the Gemini Ecosystem: Consumer, Enterprise, and Public Sector AI.
+
+
+________________
+
+
+Core Architectural Pillars
+1. BrAIn³ Cognitive Memory Layer (/brain3-memory)
+* Semantic Knowledge Graph: Ingests unstructured personal telemetry, notes, and cross-session interactions into a local-first queryable graph.
+* Dynamic Context Engineering: Hybrid vector + graph traversal retrieval layer that injects temporal, high-signal context into frontier LLM prompts while preventing context window bloat.
+2. Enterprise Multi-Agent Orchestration & ADK 2.0 (/adk-enterprise-patterns)
+* Hierarchical & Peer-to-Peer A2A Routing: Reference patterns for deploying supervisor and specialist subagents on Vertex AI Agent Engine and registering them into Google Agentspace.
+* Private Service Connect (allapi-psc) & Tool Harnesses: Deterministic MCP tool servers backed by Cloud Run, Cloud Functions, and Firestore state persistence.
+* Included Domain Blueprints:
+   * GovMap AI Assistant (applet_access_history.json): Geospatial constituent & public infrastructure discovery grounded via MCP Maps.
+   * GCP Cloud Architect Prep Agent (AI Studio Applet): Case-study sparring partner and WAF/security architecture evaluator.
+3. "The Anatomy of the AI Agent" & Zero-Trust Governance (/docs/anatomy-of-an-agent)
+* Comparative architectural analysis contrasting perimeter translation proxies (e.g., LiteLLM) with native control-plane agent harnesses.
+* Implements SPIFFE cryptographically attested agent identities, fine-grained IAM/RBAC, and Model Armor runtime semantic guardrails.
