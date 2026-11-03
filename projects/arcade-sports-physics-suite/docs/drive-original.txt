@@ -1,0 +1,59 @@
+🏈🏀 Arcade Sports Physics Suite: 3D 7v7 Football & Street Basketball
+ 
+Overview
+A dual-engine showcase of custom 3D sports physics, spatial AI decision-making, and custom shader programming built from scratch without commercial game engines, pairing a native C++ / Raylib 3D 7v7 Football Simulation with a WebGL / Three.js Arcade Basketball Prototype (alongside the AI Studio Retro Football applet).
+
+
+________________
+
+
+Engine 1: 3D 7v7 Football Simulation (/football-7v7-cpp)
+* NFL-Style Passing & Coverage State Machines:
+   * Offensive route trees (Slant, Post, Corner, Wheel, Dig, Flat) paired with reactive defensive AI shells (Cover 2, Cover 3, Quarters, and Man-to-Man).
+* Ball Trajectory & Aerodynamics Solver:
+   * Computes 3D parabolic launch vectors, air drag, spiral torque stabilization, lead-pass interception points, and receiver catch-radius hitboxes.
+* Custom OpenGL / GLSL Presentation:
+   * Programmatic field turf shaders, dynamic camera lerping (pre-snap coach overhead view to 3rd-person ball-tracking camera), and a reactive stadium crowd audio state machine.
+
+
+________________
+
+
+Engine 2: Arcade Basketball Prototype (/arcade-basketball-webgl)
+* 90s/2000s Coin-Op Physics (NBA Street / NBA Jam Inspiration):
+   * Evolved from a pure parabolic trajectory and rim-rebound physics engine into a high-flying arcade streetball prototype with scaled gravity, ankle-breaker crossover windows, and rim-hanging dunk physics.
+* Two-Tier Gamebreaker Momentum System:
+   * Tracks trick combos, alley-oop chains, and defensive blocks/steals to charge momentum multipliers and trigger visual court shaders.
+* Low-Latency Input Buffer:
+   * Supports Web Gamepad API and rapid keyboard combo sequences.
+
+
+________________
+
+
+Building & Running (Native + WebAssembly)
+3D 7v7 Football (C++ / Raylib / Emscripten WASM)
+cd football-7v7-cpp
+
+
+mkdir build && cd build
+
+
+cmake ..
+
+
+make && ./football_7v7
+
+
+# Optional: Compile to WebAssembly for GitHub Pages browser demo
+
+
+emcc src/*.cpp -o dist/index.html -lraylib -s USE_GLFW=3 -s ASYNCIFY --preload-file assets
+Arcade Basketball (Three.js / WebGL)
+cd arcade-basketball-webgl
+
+
+npm install
+
+
+npm run dev
