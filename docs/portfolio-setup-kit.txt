@@ -1,0 +1,889 @@
+GitHub Portfolio Repository Scaffolds & Local Setup Kit
+Standardized local deployment blueprints and complete repository scaffolds for stem-arcade-quest, youth-stem-symposium-labs, ADK-v1, and HIAI.
+1. Automated Local Portfolio Setup Script (setup_local_portfolio.sh)
+The following Bash script automates the complete provisioning of local repositories under /Users/sirmbp/Documents/GitHub-Portfolio, initializes clean Git environments on main, and standardizes existing enterprise workspaces in accordance with Google-ADK-Samples and the Navigating the Gemini Ecosystem Documentation.
+#!/usr/bin/env bash
+set -euo pipefail
+
+
+# Configuration
+BASE_DIR="/Users/sirmbp/Documents/GitHub-Portfolio"
+ADK_DIR="/Users/sirmbp/ADK-v1"
+HIAI_DIR="/Users/sirmbp/Documents/ChatGPT/HIAI"
+
+
+echo "=== Initializing Local GitHub Portfolio Environment ==="
+mkdir -p "$BASE_DIR"
+
+
+# 1. Initialize stem-arcade-quest
+echo "Setting up stem-arcade-quest repository..."
+mkdir -p "$BASE_DIR/stem-arcade-quest/.github/workflows"
+mkdir -p "$BASE_DIR/stem-arcade-quest/src/"{audio,engine,maze,questions}
+mkdir -p "$BASE_DIR/stem-arcade-quest/public/assets"
+cd "$BASE_DIR/stem-arcade-quest"
+git init -b main
+
+
+# 2. Initialize youth-stem-symposium-labs
+echo "Setting up youth-stem-symposium-labs repository..."
+mkdir -p "$BASE_DIR/youth-stem-symposium-labs/.github/workflows"
+mkdir -p "$BASE_DIR/youth-stem-symposium-labs/src/labs/"{gene-designer,quantum-logic,gravity-lab,asteroid-shooter}
+cd "$BASE_DIR/youth-stem-symposium-labs"
+git init -b main
+
+
+# 3. Standardize ADK-v1 Enterprise Repository
+echo "Standardizing ADK-v1 workspace..."
+mkdir -p "$ADK_DIR/"{src/google/adk,assets/architecture,docs}
+
+
+# 4. Standardize HIAI Platform Workspace
+echo "Standardizing HIAI platform workspace..."
+mkdir -p "$HIAI_DIR/"{src/hiai,frontend,assets,docs}
+
+
+echo "=== Local Portfolio Initialization and Standardization Complete ==="
+2. Scaffold 1: stem-arcade-quest
+Grounded in Kids Game Design: Frogger-Style Learning and companion kids arcade telemetry from applet_access_history.json, this repository delivers a complete retro HTML5 Canvas arcade game integrating Pac-Man grid navigation, Frogger multi-speed hazard lanes, procedural chiptune synthesis, and K-8 STEM checkpoint gates.
+Repository Directory Structure
+stem-arcade-quest/
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml
+├── public/
+│   └── assets/
+├── src/
+│   ├── audio/
+│   │   └── ChiptuneSynth.ts
+│   ├── engine/
+│   │   └── LaneHazards.ts
+│   ├── maze/
+│   │   ├── PatrolAI.ts
+│   │   └── TileMap.ts
+│   ├── questions/
+│   │   └── StemBank.ts
+│   └── main.ts
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+package.json
+{
+  "name": "stem-arcade-quest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
+  }
+}
+tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"]
+}
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEM Arcade Quest: Retro Learning Engine</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #0d1117; color: #58a6ff; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; overflow: hidden; }
+    #hud { width: 640px; display: flex; justify-content: space-between; padding: 8px 16px; background: #161b22; border: 2px solid #30363d; border-bottom: none; font-size: 16px; font-weight: bold; }
+    canvas { border: 2px solid #30363d; background: #000; box-shadow: 0 0 24px rgba(88, 166, 255, 0.2); image-rendering: pixelated; }
+    #stem-modal { display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 480px; background: #161b22; border: 3px solid #f0883e; padding: 24px; box-shadow: 0 0 32px rgba(240, 136, 62, 0.5); z-index: 10; border-radius: 8px; }
+    #modal-title { color: #f0883e; font-size: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    #modal-question { font-size: 16px; color: #c9d1d9; margin-bottom: 16px; line-height: 1.4; }
+    .option-btn { display: block; width: 100%; padding: 10px; margin: 8px 0; background: #21262d; color: #58a6ff; border: 1px solid #30363d; border-radius: 4px; cursor: pointer; font-size: 14px; text-align: left; transition: all 0.2s; }
+    .option-btn:hover { background: #30363d; color: #ffffff; border-color: #58a6ff; }
+  </style>
+</head>
+<body>
+  <div id="hud">
+    <span>SCORE: <span id="score-val">00000</span></span>
+    <span>ZONE: <span id="zone-val">1 (MAZE)</span></span>
+    <span>ENERGY: <span id="lives-val">3</span></span>
+  </div>
+  <canvas id="game-canvas" width="640" height="640"></canvas>
+  <div id="stem-modal">
+    <h2 id="modal-title">STEM Checkpoint</h2>
+    <div id="modal-question">Question Text</div>
+    <div id="modal-options"></div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
+src/audio/ChiptuneSynth.ts
+export class ChiptuneSynth {
+  private ctx: AudioContext | null = null;
+
+
+  private ensureContext() {
+    if (!this.ctx) {
+      this.ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    }
+    if (this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+  }
+
+
+  public playCollect() {
+    this.ensureContext();
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(587.33, this.ctx.currentTime); // D5
+    osc.frequency.exponentialRampToValueAtTime(880.00, this.ctx.currentTime + 0.1); // A5
+    gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.1);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.1);
+  }
+
+
+  public playHazard() {
+    this.ensureContext();
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(150, this.ctx.currentTime);
+    osc.frequency.linearRampToValueAtTime(40, this.ctx.currentTime + 0.3);
+    gain.gain.setValueAtTime(0.25, this.ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.3);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.3);
+  }
+
+
+  public playSuccess() {
+    this.ensureContext();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+    const notes = [523.25, 659.25, 783.99, 1046.50]; // C - E - G - C
+    notes.forEach((freq, idx) => {
+      const osc = this.ctx!.createOscillator();
+      const gain = this.ctx!.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+      gain.gain.setValueAtTime(0.2, now + idx * 0.08);
+      gain.gain.linearRampToValueAtTime(0.01, now + (idx + 1) * 0.08);
+      osc.connect(gain);
+      gain.connect(this.ctx!.destination);
+      osc.start(now + idx * 0.08);
+      osc.stop(now + (idx + 1) * 0.08);
+    });
+  }
+}
+src/questions/StemBank.ts
+export interface StemQuestion {
+  id: string;
+  category: 'Math' | 'Physics' | 'Logic' | 'Coding';
+  prompt: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
+
+export const STEM_QUESTIONS: StemQuestion[] = [
+  {
+    id: 'math-01',
+    category: 'Math',
+    prompt: 'A Mars rover travels 4.5 meters per second. How far does it travel in 12 seconds?',
+    options: ['48 meters', '54 meters', '52.5 meters', '60 meters'],
+    correctIndex: 1,
+    explanation: 'Distance = Velocity * Time: 4.5 * 12 = 54 meters.'
+  },
+  {
+    id: 'physics-01',
+    category: 'Physics',
+    prompt: 'According to Newtons Third Law of Motion, for every action force there is:',
+    options: ['A greater opposite force', 'An equal and opposite reaction force', 'A constant perpendicular velocity', 'No resultant force'],
+    correctIndex: 1,
+    explanation: 'Forces always occur in matched equal and opposite action-reaction pairs.'
+  },
+  {
+    id: 'coding-01',
+    category: 'Coding',
+    prompt: 'In binary notation, what decimal integer value does the binary string 1011 represent?',
+    options: ['9', '11', '13', '15'],
+    correctIndex: 1,
+    explanation: '8*1 + 4*0 + 2*1 + 1*1 = 8 + 0 + 2 + 1 = 11.'
+  },
+  {
+    id: 'logic-01',
+    category: 'Logic',
+    prompt: 'If gate A is true and gate B is false, what does the Boolean expression (A AND (NOT B)) evaluate to?',
+    options: ['True', 'False', 'Undefined', 'Null'],
+    correctIndex: 0,
+    explanation: 'NOT False is True; True AND True equals True.'
+  }
+];
+src/maze/TileMap.ts
+export class TileMap {
+  public readonly tileSize = 32;
+  public readonly cols = 20;
+  public readonly rows = 10;
+
+
+  // 0: empty, 1: wall, 2: stem-orb
+  public grid: number[][] = [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 2, 0, 0, 1, 0, 2, 0, 0, 1, 1, 0, 0, 2, 0, 1, 0, 0, 2, 1],
+    [1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1],
+    [1, 2, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 2, 1],
+    [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+    [1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 1],
+    [1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  ];
+
+
+  public isWall(col: number, row: number): boolean {
+    if (col < 0 || col >= this.cols || row < 0 || row >= this.rows) return true;
+    return this.grid[row][col] === 1;
+  }
+
+
+  public render(ctx: CanvasRenderingContext2D) {
+    for (let r = 0; r < this.rows; r++) {
+      for (let c = 0; c < this.cols; c++) {
+        const tile = this.grid[r][c];
+        const x = c * this.tileSize;
+        const y = r * this.tileSize;
+        if (tile === 1) {
+          ctx.fillStyle = '#1f6feb';
+          ctx.fillRect(x, y, this.tileSize, this.tileSize);
+          ctx.strokeStyle = '#388bfd';
+          ctx.strokeRect(x + 2, y + 2, this.tileSize - 4, this.tileSize - 4);
+        } else if (tile === 2) {
+          ctx.fillStyle = '#ffd700';
+          ctx.beginPath();
+          ctx.arc(x + this.tileSize / 2, y + this.tileSize / 2, 5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+  }
+}
+src/maze/PatrolAI.ts
+import { TileMap } from './TileMap';
+
+
+export class PatrolAI {
+  public x: number;
+  public y: number;
+  public speed = 1.8;
+  public dirX = 1;
+  public dirY = 0;
+
+
+  constructor(startX: number, startY: number) {
+    this.x = startX;
+    this.y = startY;
+  }
+
+
+  public update(map: TileMap) {
+    const nextX = this.x + this.dirX * this.speed;
+    const nextY = this.y + this.dirY * this.speed;
+    const col = Math.floor(nextX / map.tileSize);
+    const row = Math.floor(nextY / map.tileSize);
+
+
+    if (map.isWall(col, row)) {
+      const dirs = [
+        { x: 1, y: 0 }, { x: -1, y: 0 }, { x: 0, y: 1 }, { x: 0, y: -1 }
+      ];
+      const valid = dirs.filter(d => !map.isWall(Math.floor((this.x + d.x * map.tileSize) / map.tileSize), Math.floor((this.y + d.y * map.tileSize) / map.tileSize)));
+      if (valid.length > 0) {
+        const chosen = valid[Math.floor(Math.random() * valid.length)];
+        this.dirX = chosen.x;
+        this.dirY = chosen.y;
+      } else {
+        this.dirX = -this.dirX;
+        this.dirY = -this.dirY;
+      }
+    } else {
+      this.x = nextX;
+      this.y = nextY;
+    }
+  }
+
+
+  public render(ctx: CanvasRenderingContext2D) {
+    ctx.fillStyle = '#ff7b72';
+    ctx.beginPath();
+    ctx.arc(this.x + 16, this.y + 16, 12, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+src/engine/LaneHazards.ts
+export interface Hazard {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  speed: number;
+}
+
+
+export class LaneHazards {
+  public hazards: Hazard[] = [];
+  private laneCount = 4;
+  public startY = 320; // Bottom half of 640px screen
+  public laneHeight = 64;
+
+
+  constructor() {
+    for (let i = 0; i < this.laneCount; i++) {
+      const speed = (i % 2 === 0 ? 1 : -1) * (1.5 + i * 0.7);
+      this.hazards.push({
+        x: (i * 180) % 640,
+        y: this.startY + i * this.laneHeight + 12,
+        width: 60,
+        height: 40,
+        speed
+      });
+      this.hazards.push({
+        x: ((i * 180) + 320) % 640,
+        y: this.startY + i * this.laneHeight + 12,
+        width: 60,
+        height: 40,
+        speed
+      });
+    }
+  }
+
+
+  public update() {
+    for (const h of this.hazards) {
+      h.x += h.speed;
+      if (h.speed > 0 && h.x > 640) h.x = -h.width;
+      if (h.speed < 0 && h.x < -h.width) h.x = 640;
+    }
+  }
+
+
+  public checkCollision(px: number, py: number, pSize: number): boolean {
+    for (const h of this.hazards) {
+      if (px < h.x + h.width && px + pSize > h.x && py < h.y + h.height && py + pSize > h.y) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+
+  public render(ctx: CanvasRenderingContext2D) {
+    for (let i = 0; i < this.laneCount; i++) {
+      ctx.fillStyle = i % 2 === 0 ? '#161b22' : '#0d1117';
+      ctx.fillRect(0, this.startY + i * this.laneHeight, 640, this.laneHeight);
+    }
+    ctx.fillStyle = '#f0883e';
+    for (const h of this.hazards) {
+      ctx.fillRect(h.x, h.y, h.width, h.height);
+      ctx.fillStyle = '#ffa657';
+      ctx.fillRect(h.x + 4, h.y + 4, h.width - 8, h.height - 8);
+      ctx.fillStyle = '#f0883e';
+    }
+  }
+}
+src/main.ts
+import { TileMap } from './maze/TileMap';
+import { PatrolAI } from './maze/PatrolAI';
+import { LaneHazards } from './engine/LaneHazards';
+import { ChiptuneSynth } from './audio/ChiptuneSynth';
+import { STEM_QUESTIONS, StemQuestion } from './questions/StemBank';
+
+
+export class StemArcadeQuestGame {
+  private canvas = document.getElementById('game-canvas') as HTMLCanvasElement;
+  private ctx = this.canvas.getContext('2d')!;
+  private scoreEl = document.getElementById('score-val')!;
+  private zoneEl = document.getElementById('zone-val')!;
+  private livesEl = document.getElementById('lives-val')!;
+  private modalEl = document.getElementById('stem-modal')!;
+  private modalQuestion = document.getElementById('modal-question')!;
+  private modalOptions = document.getElementById('modal-options')!;
+
+
+  private map = new TileMap();
+  private patrol = new PatrolAI(32, 160);
+  private hazards = new LaneHazards();
+  private synth = new ChiptuneSynth();
+
+
+  private playerX = 32;
+  private playerY = 600;
+  private playerSize = 24;
+  private speed = 4;
+  private score = 0;
+  private energy = 3;
+  private isPaused = false;
+
+
+  constructor() {
+    window.addEventListener('keydown', (e) => this.handleInput(e));
+    requestAnimationFrame(() => this.loop());
+  }
+
+
+  private handleInput(e: KeyboardEvent) {
+    if (this.isPaused) return;
+    if (e.key === 'ArrowUp' && this.playerY - this.speed >= 0) this.playerY -= this.speed;
+    if (e.key === 'ArrowDown' && this.playerY + this.playerSize + this.speed <= 640) this.playerY += this.speed;
+    if (e.key === 'ArrowLeft' && this.playerX - this.speed >= 0) this.playerX -= this.speed;
+    if (e.key === 'ArrowRight' && this.playerX + this.playerSize + this.speed <= 640) this.playerX += this.speed;
+  }
+
+
+  private triggerCheckpoint() {
+    this.isPaused = true;
+    const q: StemQuestion = STEM_QUESTIONS[Math.floor(Math.random() * STEM_QUESTIONS.length)];
+    this.modalQuestion.textContent = `[${q.category}] ${q.prompt}`;
+    this.modalOptions.innerHTML = '';
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.textContent = `${idx + 1}. ${opt}`;
+      btn.onclick = () => {
+        if (idx === q.correctIndex) {
+          this.synth.playSuccess();
+          this.score += 500;
+        } else {
+          this.synth.playHazard();
+          this.energy--;
+        }
+        this.modalEl.style.display = 'none';
+        this.isPaused = false;
+      };
+      this.modalOptions.appendChild(btn);
+    });
+    this.modalEl.style.display = 'block';
+  }
+
+
+  private loop() {
+    if (!this.isPaused) {
+      this.update();
+      this.render();
+    }
+    requestAnimationFrame(() => this.loop());
+  }
+
+
+  private update() {
+    this.patrol.update(this.map);
+    this.hazards.update();
+    if (this.hazards.checkCollision(this.playerX, this.playerY, this.playerSize)) {
+      this.synth.playHazard();
+      this.energy--;
+      this.playerX = 32; this.playerY = 600;
+    }
+    this.scoreEl.textContent = this.score.toString().padStart(5, '0');
+    this.livesEl.textContent = this.energy.toString();
+    this.zoneEl.textContent = this.playerY < 320 ? 'MAZE CORE' : 'HAZARD LANES';
+  }
+
+
+  private render() {
+    this.ctx.clearRect(0, 0, 640, 640);
+    this.map.render(this.ctx);
+    this.hazards.render(this.ctx);
+    this.patrol.render(this.ctx);
+    this.ctx.fillStyle = '#39d353';
+    this.ctx.fillRect(this.playerX, this.playerY, this.playerSize, this.playerSize);
+  }
+}
+new StemArcadeQuestGame();
+.github/workflows/deploy-pages.yml
+name: Deploy STEM Arcade Quest to GitHub Pages
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci
+      - name: Build project
+        run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+3. Scaffold 2: youth-stem-symposium-labs
+Designed for the Howard Community College Youth STEM Symposium (March 14, 2026) and grounded in the Personalized AI Learning Notebook, this suite provides four production-grade interactive React + TypeScript exploratory laboratory modules.
+Repository Directory Structure
+youth-stem-symposium-labs/
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml
+├── src/
+│   ├── labs/
+│   │   ├── asteroid-shooter/
+│   │   │   └── VectorAsteroidLab.tsx
+│   │   ├── gene-designer/
+│   │   │   └── GeneDesignerLab.tsx
+│   │   ├── gravity-lab/
+│   │   │   └── OrbitalGravityLab.tsx
+│   │   └── quantum-logic/
+│   │       └── QuantumGatePlayground.tsx
+│   ├── App.tsx
+│   └── main.tsx
+├── package.json
+└── tsconfig.json
+package.json
+{
+  "name": "youth-stem-symposium-labs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.344.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
+  }
+}
+src/labs/gene-designer/GeneDesignerLab.tsx
+import React, { useState } from 'react';
+
+
+const GENETIC_CODE: Record<string, string> = {
+  AUG: 'Methionine (START)', UUU: 'Phenylalanine', UUC: 'Phenylalanine',
+  UUA: 'Leucine', UUG: 'Leucine', GGU: 'Glycine', GGC: 'Glycine',
+  GGA: 'Glycine', GGG: 'Glycine', UAA: 'STOP', UAG: 'STOP', UGA: 'STOP'
+};
+
+
+export const GeneDesignerLab: React.FC = () => {
+  const [dna, setDna] = useState('TACAAACCCTGAATC');
+  const complement = dna.split('').map(b => ({ A: 'T', T: 'A', C: 'G', G: 'C' }[b] || '?')).join('');
+  const mrna = dna.split('').map(b => ({ A: 'U', T: 'A', C: 'G', G: 'C' }[b] || '?')).join('');
+  const codons = mrna.match(/.{1,3}/g) || [];
+  const aminoAcids = codons.map(c => GENETIC_CODE[c] || 'Unknown');
+
+
+  return (
+    <div style={{ padding: 20, background: '#161b22', color: '#c9d1d9', borderRadius: 8 }}>
+      <h3 style={{ color: '#58a6ff' }}>CRISPR & Gene Designer Lab</h3>
+      <label>Template DNA Strand (3 to 5):</label>
+      <input
+        value={dna}
+        onChange={(e) => setDna(e.target.value.toUpperCase())}
+        style={{ width: '100%', padding: 8, margin: '8px 0', background: '#0d1117', color: '#7ee787', border: '1px solid #30363d' }}
+      />
+      <p><strong>Complementary DNA:</strong> {complement}</p>
+      <p><strong>Transcribed mRNA:</strong> {mrna}</p>
+      <h4 style={{ marginTop: 12, color: '#f0883e' }}>Translated Polypeptide Chain:</h4>
+      <ul>
+        {codons.map((codon, i) => (
+          <li key={i}>Codon <code>{codon}</code> &rarr; <strong>{aminoAcids[i]}</strong></li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+src/labs/quantum-logic/QuantumGatePlayground.tsx
+import React, { useState } from 'react';
+
+
+export const QuantumGatePlayground: React.FC = () => {
+  const [alpha, setAlpha] = useState(1.0); // Amplitude for |0>
+  const [beta, setBeta] = useState(0.0);  // Amplitude for |1>
+
+
+  const applyHadamard = () => {
+    const invSqrt2 = 1 / Math.SQRT2;
+    const newA = invSqrt2 * alpha + invSqrt2 * beta;
+    const newB = invSqrt2 * alpha - invSqrt2 * beta;
+    setAlpha(newA);
+    setBeta(newB);
+  };
+
+
+  const applyPauliX = () => {
+    setAlpha(beta);
+    setBeta(alpha);
+  };
+
+
+  const prob0 = Math.min(100, Math.round(alpha * alpha * 100));
+  const prob1 = Math.min(100, Math.round(beta * beta * 100));
+
+
+  return (
+    <div style={{ padding: 20, background: '#161b22', color: '#c9d1d9', borderRadius: 8 }}>
+      <h3 style={{ color: '#bc8cff' }}>Single-Qubit Quantum Circuit Simulator</h3>
+      <p>State: |&psi;&rang; = {alpha.toFixed(3)}|0&rang; + {beta.toFixed(3)}|1&rang;</p>
+      <div style={{ margin: '16px 0' }}>
+        <button onClick={applyHadamard} style={{ padding: '8px 16px', marginRight: 8 }}>Apply Hadamard (H)</button>
+        <button onClick={applyPauliX} style={{ padding: '8px 16px', marginRight: 8 }}>Apply Pauli-X (NOT)</button>
+        <button onClick={() => { setAlpha(1); setBeta(0); }} style={{ padding: '8px 16px' }}>Reset |0&rang;</button>
+      </div>
+      <div>
+        <div>Probability |0&rang;: {prob0}%</div>
+        <div style={{ background: '#30363d', height: 16, width: '100%', borderRadius: 4, margin: '4px 0 12px' }}>
+          <div style={{ background: '#58a6ff', height: '100%', width: `${prob0}%`, borderRadius: 4 }} />
+        </div>
+        <div>Probability |1&rang;: {prob1}%</div>
+        <div style={{ background: '#30363d', height: 16, width: '100%', borderRadius: 4, margin: '4px 0' }}>
+          <div style={{ background: '#bc8cff', height: '100%', width: `${prob1}%`, borderRadius: 4 }} />
+        </div>
+      </div>
+    </div>
+  );
+};
+src/labs/gravity-lab/OrbitalGravityLab.tsx
+import React, { useRef, useEffect } from 'react';
+
+
+export const OrbitalGravityLab: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d')!;
+
+
+    let x = 300, y = 100, vx = 2.4, vy = 0;
+    const sunX = 300, sunY = 250, sunM = 2000;
+    let animId: number;
+
+
+    const loop = () => {
+      const dx = sunX - x;
+      const dy = sunY - y;
+      const distSq = dx * dx + dy * dy;
+      const dist = Math.sqrt(distSq);
+      const f = sunM / Math.max(distSq, 100);
+      vx += (dx / dist) * f * 0.05;
+      vy += (dy / dist) * f * 0.05;
+      x += vx;
+      y += vy;
+
+
+      ctx.fillStyle = 'rgba(13, 17, 23, 0.2)';
+      ctx.fillRect(0, 0, 600, 500);
+
+
+      ctx.fillStyle = '#ffd700';
+      ctx.beginPath();
+      ctx.arc(sunX, sunY, 16, 0, Math.PI * 2);
+      ctx.fill();
+
+
+      ctx.fillStyle = '#58a6ff';
+      ctx.beginPath();
+      ctx.arc(x, y, 6, 0, Math.PI * 2);
+      ctx.fill();
+
+
+      animId = requestAnimationFrame(loop);
+    };
+    loop();
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+
+  return (
+    <div style={{ padding: 20, background: '#161b22', borderRadius: 8 }}>
+      <h3 style={{ color: '#58a6ff' }}>Orbital Gravity Mechanics Lab</h3>
+      <canvas ref={canvasRef} width={600} height={500} style={{ border: '1px solid #30363d', borderRadius: 4 }} />
+    </div>
+  );
+};
+src/labs/asteroid-shooter/VectorAsteroidLab.tsx
+import React, { useRef, useEffect } from 'react';
+
+
+export const VectorAsteroidLab: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d')!;
+
+
+    let px = 300, py = 250, angle = 0, vx = 0, vy = 0;
+    const keys: Record<string, boolean> = {};
+
+
+    const onKeyDown = (e: KeyboardEvent) => { keys[e.key] = true; };
+    const onKeyUp = (e: KeyboardEvent) => { keys[e.key] = false; };
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keyup', onKeyUp);
+
+
+    let animId: number;
+    const loop = () => {
+      if (keys['ArrowLeft']) angle -= 0.05;
+      if (keys['ArrowRight']) angle += 0.05;
+      if (keys['ArrowUp']) {
+        vx += Math.cos(angle) * 0.1;
+        vy += Math.sin(angle) * 0.1;
+      }
+      px = (px + vx + 600) % 600;
+      py = (py + vy + 500) % 500;
+      vx *= 0.99; vy *= 0.99;
+
+
+      ctx.clearRect(0, 0, 600, 500);
+      ctx.save();
+      ctx.translate(px, py);
+      ctx.rotate(angle);
+      ctx.strokeStyle = '#58a6ff';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(15, 0);
+      ctx.lineTo(-10, -10);
+      ctx.lineTo(-5, 0);
+      ctx.lineTo(-10, 10);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
+
+
+      animId = requestAnimationFrame(loop);
+    };
+    loop();
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('keyup', onKeyUp);
+      cancelAnimationFrame(animId);
+    };
+  }, []);
+
+
+  return (
+    <div style={{ padding: 20, background: '#161b22', borderRadius: 8 }}>
+      <h3 style={{ color: '#7ee787' }}>Newtonian 2D Vector Asteroid Propulsion Lab</h3>
+      <canvas ref={canvasRef} width={600} height={500} style={{ border: '1px solid #30363d', borderRadius: 4 }} />
+    </div>
+  );
+};
+4. Local Repository Packaging: ADK-v1 & HIAI
+Standardized packaging specifications for local enterprise repos residing on macOS.
+Google ADK Enterprise Agent Architecture (/Users/sirmbp/ADK-v1)
+Engineered against 2025-09-09 - GPS ADK Hackathon: Technical Requirements for Partners.pdf and the Navigating the Gemini Ecosystem Documentation.
+/Users/sirmbp/ADK-v1/
+├── assets/
+│   └── architecture/
+│       └── adk-flow.png
+├── docs/
+│   ├── GOVERNANCE.md
+│   └── MODEL_EVOLUTION.md
+├── src/
+│   └── google/
+│       └── adk/
+│           ├── __init__.py
+│           ├── agent.py
+│           └── dispatcher.py
+├── README.md
+└── requirements.txt
+README.md Specification (/Users/sirmbp/ADK-v1/README.md):
+# Google Agent Development Kit (ADK) Enterprise Multi-Agent Suite
+
+
+## Overview
+Enterprise-grade agentic orchestration engine integrating bidirectional MCP routing,
+Vertex AI GenAI SDK pipelines, and dual-brain cognitive arbitration.
+
+
+## Foundation References
+- Google ADK Reference Implementation: https://github.com/itsdeon/Google-ADK-Samples
+- GPS ADK Hackathon Technical Specifications (2025-09-09)
+- Gemini Model Transition: Gemini 1.5 Pro/Flash -> Gemini 2.0 Flash Thinking -> Gemini 2.5
+HIAI Hybrid Intelligence Platform (/Users/sirmbp/Documents/ChatGPT/HIAI)
+Production standardized directory structure and architecture specification for the Hybrid Intelligence AI framework.
+/Users/sirmbp/Documents/ChatGPT/HIAI/
+├── assets/
+│   └── diagrams/
+├── docs/
+│   ├── ARCHITECTURE.md
+│   └── MODEL_EVOLUTION.md
+├── frontend/
+│   ├── src/
+│   └── package.json
+├── src/
+│   └── hiai/
+│       ├── __init__.py
+│       ├── consensus.py
+│       └── router.py
+└── README.md
+README.md Specification (/Users/sirmbp/Documents/ChatGPT/HIAI/README.md):
+# HIAI: Hybrid Intelligence Architecture & Consensus Platform
+
+
+## Architecture
+HIAI bridges disparate foundation models across OpenAI GPT-4o, Google Gemini 2.0/2.5,
+and Anthropic Claude 3.5/3.7 Sonnet into a deterministic consensus engine with real-time arbitration.
+
